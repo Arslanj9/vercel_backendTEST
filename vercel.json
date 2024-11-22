@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "api/hello.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "functions": {
+      "api/hello.js": {
+        "runtime": "nodejs16.x"
+      }
+    }
+  }
+  
