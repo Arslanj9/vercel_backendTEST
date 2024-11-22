@@ -5,6 +5,10 @@ const Item = require('../models/ItemModel'); // Import the Item model
 // MongoDB connection URL (replace with your actual MongoDB Atlas connection string)
 const MONGODB_URI = process.env.MONGODB_URI;
 
+if (!MONGODB_URI){
+    return res.json({ message: 'MONGODB URI is not provided!' });
+}
+
 // Function to handle the GET request and retrieve data from MongoDB
 module.exports = async (req, res) => {
   if (req.method !== 'GET') {
