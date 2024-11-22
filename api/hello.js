@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
   // Connect to MongoDB if not already connected
   if (mongoose.connection.readyState !== 1) {
     try {
-      await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+      await mongoose.connect(MONGODB_URI);
     } catch (error) {
       return res.status(500).json({ message: 'Database connection failed', error });
     }
